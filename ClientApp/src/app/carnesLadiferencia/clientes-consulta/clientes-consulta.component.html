@@ -1,0 +1,36 @@
+<section id="coverconsultaclientes">
+  <div class="row">
+    <div class="col-6">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Type to filter">
+    </div>
+  </div>
+<hr>
+  
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">identificación</th>
+        <th scope="col">nombres </th>
+        <th scope="col">apellidos </th>
+        <th scope="col">direccion</th>
+        <th scope="col">telefono</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="cell" *ngFor="let client of clientess|filtroCliente:searchText; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ client.identificacion}} </td>
+        <td>{{ client.nombres }}</td>
+        <td>{{ client.apellidos }}</td>
+        <td>{{ client.direccion }}</td>
+        <td>{{ client.telefono}}</td>
+        <td>{{ client.email}}</td>
+        <td> <a routerLink='/ClientesEdicion/{{client.identificacion}}'> ver </a></td>
+      </tr>
+    </tbody>
+</table>
+
+
+</section>

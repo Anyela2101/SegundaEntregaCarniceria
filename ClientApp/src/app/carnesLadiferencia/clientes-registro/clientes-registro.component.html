@@ -1,0 +1,50 @@
+<section id="coverclientes">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Registro de Clientes</h2>
+                <form [formGroup]="formGroup">        
+                    <div class="form-group">
+                        <label for="identificacion">Identificacion</label>
+                        <input type="text" name="identificacion" formControlName="identificacion" class="form-control" [ngClass]="{'is-invalid': control.telefono.errors}"/>
+                        <div *ngIf="control['identificacion'].hasError('required')">Se requiere la identificacion</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" name="nombres" formControlName="nombres" class="form-control"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" name="apellidos" formControlName="apellidos" class="form-control"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" formControlName="direccion" class="form-control"/>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="text" name="telefono" formControlName="telefono" class="form-control"/>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" formControlName="email" class="form-control"/>
+                    </div>
+    
+                    <div class="text-center">
+                        <button class="btn btn-danger mr-1"(click)="onSubmit()" [disabled]="formGroup.invalid">Registrar Datos</button>
+                        <button class="btn btn-secondary" type="reset">Cancel</button>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>
